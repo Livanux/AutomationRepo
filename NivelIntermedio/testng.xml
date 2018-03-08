@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Livanux TestSuite">
+    <test verbose="2" preserve-order="true"
+          name="Run Livanux Test">
+        <classes>
+            <class name="org.livanux.intermedio.EjemploDataProvider">
+            </class>
+            <class name="org.livanux.intermedio.TestNGAnnotations">
+            </class>
+        </classes>
+    </test>
+</suite>
