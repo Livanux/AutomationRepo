@@ -43,11 +43,11 @@ public class EjemploDataProvider {
     public void testMethod(String tester, String search) throws InterruptedException {
         WebElement txtSearch = driver.findElement(By.name("q"));
         txtSearch.sendKeys(search);
-       // System.out.println("Bienvenido -> " + tester + " Tu palabra de busqueda es: " + search);
+        System.out.println("Bienvenido -> " + tester + " Tu palabra de busqueda es: " + search);
         Thread.sleep(3000);
 
         String searchValue = txtSearch.getAttribute("value");
-        //System.out.println("El valor de prueba es: " + searchValue + " y es igual a " + search);
+        System.out.println("El valor de prueba es: " + searchValue + " y es igual a " + search);
         txtSearch.clear();
         Assert.assertTrue(searchValue.equals(search));
     }
