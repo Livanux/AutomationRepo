@@ -2,6 +2,7 @@ package org.livanux.reports;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ public class PdfEmail extends BaseClass{
     @Test
     public void testOne(){
         driver.get("https://www.google.com.mx");
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 
     @Test
@@ -27,11 +28,20 @@ public class PdfEmail extends BaseClass{
     @Test
     public void testThree(){
         driver.get("https://titaniumsolutions.org/");
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 
     @AfterTest
     public void closeBrowser(){
         driver.quit();
     }
+
+
+    @AfterSuite
+    public void sendEmail(){
+        sendPdfByEmail("titaniumsoltest@gmail.com", "titaniumsoltest", "titaniumsoltest@gmail.com",
+                "IVAN PDF Report", "Please find attached the PDF report");
+    }
+
+
 }
