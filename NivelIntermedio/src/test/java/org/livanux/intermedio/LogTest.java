@@ -44,7 +44,7 @@ public class LogTest {
         log.info("Browser Closed.");
     }
 
-    @Test
+    @Test(dependsOnMethods = "launchBrowser")
     public void BMICalculator(){
         try{
             log.info("Entering Weight");
@@ -52,7 +52,7 @@ public class LogTest {
 
             log.info("Selecting Kg");
             new Select(driver.findElement(By.name("opt1")))
-                    .selectByVisibleText("kilogramskilograms");
+                    .selectByVisibleText("kilograms");
 
             log.info("Select Height in feet");
             new Select(driver.findElement(By.name("opt2")))
